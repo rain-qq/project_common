@@ -1,0 +1,25 @@
+{
+  "name": "@rain/cli",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./bin/rain.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "rain": "./bin/rain.js"
+  },
+  "dependencies": {
+    "@rain/eslint-config": "^1.0.0",
+    "@rain/prettier-config": "^1.0.0",
+    "inquirer": "^11.1.0"
+  },
+  "files": [
+    "bin",
+    "setup.js"
+  ],
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

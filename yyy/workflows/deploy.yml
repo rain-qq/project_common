@@ -1,0 +1,56 @@
+name: Deploy VitePress site to Pages
+
+on:
+  push:
+    branches: [master] # 修改为你的主分支 master
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: npm # 或 pnpm / yarn
+
+      - name: Install dependencies
+        run: |
+          cd packages/blog
+          npm ci # 安装 `packages/blog` 下的依赖
+
+      - name: Build with VitePress
+        run: |
+          cd packages/blog
+          npm run docs:build # 构建文档站点
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: packages/blog/docs/.vitepress/dist # 上传构建目录
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
