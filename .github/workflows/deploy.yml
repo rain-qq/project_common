@@ -27,17 +27,17 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 18
-          cache: npm # 或 pnpm / yarn
+          cache: pnpm # 或 ppnpm / yarn
 
       - name: Install dependencies
         run: |
           cd packages/blog
-          npm ci # 安装 `packages/blog` 下的依赖
+          pnpm ci # 安装 `packages/blog` 下的依赖
 
       - name: Build with VitePress
         run: |
           cd packages/blog
-          npm run docs:build # 构建文档站点
+          pnpm run docs:build # 构建文档站点
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
