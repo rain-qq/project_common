@@ -27,6 +27,9 @@ jobs:
   # 构建工作
   build:
     runs-on: ubuntu-latest
+    default:
+      run:
+        working-directory: ./document
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -43,8 +46,6 @@ jobs:
           cache: pnpm # 或 pnpm / yarn
       - name: Setup Pages
         uses: actions/configure-pages@v4
-      - name: Enter document
-        run: cd document
       - name: Install dependencies
         run: pnpm ci # 或 pnpm install / yarn install / bun install
       - name: Build with VitePress
