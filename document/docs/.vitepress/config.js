@@ -1,7 +1,7 @@
 export default {
   title: 'My VitePress Blog', // 哈哈哈
   description: 'A blog within a monorepo setup',
-  base: '/project-common/',
+  base: '/project_common/',
   outDir: '../public',
   themeConfig: {
     nav: [
