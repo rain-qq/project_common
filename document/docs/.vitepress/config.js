@@ -5,14 +5,21 @@ export default {
   outDir: '../public',
   themeConfig: {
     nav: [
-      { text: 'Home', link: '/' },
-      { text: 'Posts', link: '/posts/first-post' }
+      { text: '主页', link: '/' },
+      { text: '随笔', link: '/essay' },
+      { text: '算法', link: '/algorithm'}
     ],
     sidebar: [
       {
-        text: 'Blog Posts',
+        text: '随笔',
         items: [
-          { text: 'First Post', link: '/posts/first-post' }
+          { text: '2024.11', link: '/essay/2024.11.md' }
+        ]
+      },
+      {
+        text: '算法',
+        items: [
+          { text: '最长递增子序列', link: '/algorithm/longest-increasing-subsequence.md'}
         ]
       }
     ]
