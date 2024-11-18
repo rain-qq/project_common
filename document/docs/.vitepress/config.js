@@ -6,8 +6,8 @@ export default {
   themeConfig: {
     nav: [
       { text: '主页', link: '/' },
-      { text: '随笔', link: '/essay' },
-      { text: '算法', link: '/algorithm'}
+      { text: '随笔', link: '/essay/2024.11.md' },
+      { text: '算法', link: '/algorithm/longest-increasing-subsequence.md'}
     ],
     sidebar: [
       {
