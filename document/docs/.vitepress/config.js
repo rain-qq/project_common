@@ -21,6 +21,17 @@ export default {
         items: [
           { text: '最长递增子序列', link: '/algorithm/longest-increasing-subsequence.md'}
         ]
+      },
+      {
+        text: '前端工程化',
+        items: [
+          {
+            text: '构建工具',
+            items: [
+              { text: 'webpack', link: '/engineering/webpack.md'}
+            ]
+          }
+        ]
       }
     ]
   }
