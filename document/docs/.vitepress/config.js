@@ -13,7 +13,13 @@ export default {
       {
         text: '随笔',
         items: [
-          { text: '2024.11', link: '/essay/2024.11.md' }
+          { text: '2024.11', link: '/essay/2024.11.md' },
+        ]
+      },
+      {
+        text: '面试',
+        items: [
+          { text: '面试题', link: '/interview/interview.md' }
         ]
       },
       {
